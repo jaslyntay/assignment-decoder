@@ -1,0 +1,15 @@
+{
+  "name": "assignment-decoder",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Turns confusing homework into a plan each learner can use: steps, audio, visuals, simple words.",
+  "scripts": {
+    "dev": "node dev-server.js"
+  },
+  "engines": { "node": ">=20" },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^1.3.0",
+    "zod": "^4.6.7"
+  }
+}

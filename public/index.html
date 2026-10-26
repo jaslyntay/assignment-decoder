@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Assignment Decoder</title>
+  <meta name="description" content="Paste confusing homework and get a plan you can start: bite-size steps, read-aloud, a visual map, and simple words in your language.">
+  <meta name="theme-color" content="#534AB7">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Nunito:wght@400;600;700&display=swap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.31.0/dist/tabler-icons.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to main content</a>
+  <div id="offline" class="banner" hidden role="status">You're offline. Your saved plan still works.</div>
+
+  <header class="top">
+    <div class="brand">
+      <svg class="buddy" id="buddy" viewBox="0 0 64 64" aria-hidden="true"><path d="M32 6c14 0 26 9 26 25s-10 27-26 27S6 47 6 31 18 6 32 6z" class="buddy-body"/><circle cx="23" cy="29" r="4" class="buddy-face"/><circle cx="41" cy="29" r="4" class="buddy-face"/><circle cx="24.5" cy="27.5" r="1.3" fill="#fff"/><circle cx="42.5" cy="27.5" r="1.3" fill="#fff"/><path d="M25 39q7 6 14 0" class="buddy-smile"/><ellipse cx="16" cy="37" rx="4" ry="2.5" fill="#ED93B1"/><ellipse cx="48" cy="37" rx="4" ry="2.5" fill="#ED93B1"/></svg>
+      <div>
+        <h1>Assignment Decoder</h1>
+        <p class="bubble" id="bubble">Paste your homework and I'll help you untangle it.</p>
+      </div>
+    </div>
+    <div class="prefs" role="group" aria-label="Reading preferences">
+      <button class="chip" id="smaller" aria-label="Smaller text"><span aria-hidden="true">A−</span></button>
+      <button class="chip" id="bigger" aria-label="Larger text"><span aria-hidden="true">A+</span></button>
+      <button class="chip" id="easy" aria-pressed="false"><i class="ti ti-eye" aria-hidden="true"></i> Easy-read</button>
+      <button class="chip" id="contrast" aria-pressed="false"><i class="ti ti-contrast" aria-hidden="true"></i> High contrast</button>
+    </div>
+  </header>
+
+  <main id="main">
+    <form class="card" id="form" novalidate>
+      <fieldset class="levels">
+        <legend><i class="ti ti-school" aria-hidden="true"></i> I'm in…</legend>
+        <div class="row" id="levels"></div>
+      </fieldset>
+
+      <label class="label" for="assignment"><span class="num" aria-hidden="true">1</span> Paste your assignment</label>
+      <textarea id="assignment" rows="5" maxlength="6000" placeholder="Write a 750-word argumentative essay…" aria-describedby="assignment-hint assignment-error"></textarea>
+      <p class="hint" id="assignment-hint">Only paste the assignment. Don't include your name or other private details.</p>
+      <p class="error" id="assignment-error" role="alert"></p>
+
+      <div class="row form-row">
+        <label class="field">Due date <span class="optional">(optional)</span>
+          <input type="date" id="due">
+        </label>
+        <label class="field">My home language
+          <select id="lang">
+            <option value="en">English</option>
+            <option value="es">Español</option>
+            <option value="vi">Tiếng Việt</option>
+            <option value="ar">العربية</option>
+            <option value="zh">中文</option>
+            <option value="tl">Tagalog</option>
+            <option value="fr">Français</option>
+            <option value="ht">Kreyòl ayisyen</option>
+            <option value="pt">Português</option>
+            <option value="ko">한국어</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="row actions">
+        <button type="submit" class="primary" id="decode"><i class="ti ti-wand" aria-hidden="true"></i> Decode it</button>
+        <button type="button" class="chip" id="example"><i class="ti ti-sparkles" aria-hidden="true"></i> Try an example</button>
+      </div>
+      <p class="status" id="status" role="status" aria-live="polite"></p>
+    </form>
+
+    <section id="result" hidden aria-labelledby="plan-title"></section>
+  </main>
+
+  <footer class="foot">
+    <p>Assignment Decoder explains your assignment. It never does the work for you. AI can make mistakes, so check the plan against your teacher's instructions.</p>
+  </footer>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>

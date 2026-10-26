@@ -1,0 +1,10 @@
+{
+  "name": "Assignment Decoder",
+  "short_name": "Decoder",
+  "description": "Turn confusing homework into a plan you can start.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f7f6fb",
+  "theme_color": "#534AB7",
+  "icons": [{ "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }]
+}
