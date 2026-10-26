@@ -109,6 +109,10 @@ button { cursor: pointer; }
   min-height: 36px; padding: 0 14px; border-radius: 999px; border: 1px solid var(--line-strong); background: var(--card);
   display: inline-flex; align-items: center; gap: 6px; font-size: 0.9rem;
 }
+.sizer { display: inline-flex; align-items: center; gap: 2px; min-height: 36px; padding: 0 4px 0 12px; border-radius: 999px; border: 1px solid var(--line-strong); background: var(--card); font-size: 0.9rem; }
+.sizer span { display: inline-flex; align-items: center; gap: 6px; margin-right: 4px; }
+.sizer button { width: 30px; height: 30px; border-radius: 50%; border: 0; background: var(--soft); display: inline-flex; align-items: center; justify-content: center; }
+:root[data-contrast='high'] .sizer { border: 2px solid #000; }
 .chip[aria-pressed='true'] { background: var(--te-b); color: var(--te-t); border-color: var(--te-s); }
 .level { border-width: 2px; }
 .level[aria-pressed='true'] { background: var(--pu-b); color: var(--pu-t); border-color: var(--pu-s); }
